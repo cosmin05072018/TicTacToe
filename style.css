@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Permanent Marker', cursive;
+}
+
+body {
+    background-color: var(--bodyColor);
+}
+
+:root {
+    --bodyColor: #6897BB;
+    --borderCellsAndBackground: #344B5D;
+    --item: #E7E6DC;
+    --white: #fff;
+    --red: #F40346;
+    --green: #8FCE00;
+}
+
+
+/* FORM */
+
+.formGame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.formGame .title {
+    text-align: center;
+    color: var(--borderCellsAndBackground);
+}
+
+.formGame form {
+    background-color: var(--item);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: rgba(235, 232, 232, 0.829) 0px 25px 50px -12px;
+}
+
+.formGame form .namePlayers {
+    margin: 50px auto;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formGame form .namePlayers input {
+    outline: none;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 0 12px;
+}
+
+.button {
+    border: none;
+    padding: 12px 28px;
+    margin-top: 28px;
+    border-radius: 8px;
+    font-size: 28px;
+    background-color: var(--borderCellsAndBackground);
+    color: var(--white);
+    box-shadow: rgb(241, 241, 243) 0px 7px 29px 0px;
+    cursor: pointer;
+}
+
+.players {
+    display: flex;
+    justify-content: space-around;
+    font-size: 30px;
+}
+
+.players .player span {
+    font-size: 28px;
+    color: var(--borderCellsAndBackground);
+}
+
+.displayErr {
+    text-align: center;
+    background-color: var(--red);
+    color: var(--white);
+    font-size: 24px;
+    padding: 8px 0;
+    border-radius: 8px;
+}
+
+
+/* GAME */
+
+.container {
+    display: flex;
+    align-items: center;
+    margin-top: 140px;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+}
+
+.item {
+    font-size: 100px;
+    width: 150px;
+    height: 150px;
+    color: var(--item);
+    cursor: pointer;
+}
+
+.item:nth-child(1),
+.item:nth-child(2),
+.item:nth-child(4),
+.item:nth-child(5) {
+    border-right: 8px solid var(--borderCellsAndBackground);
+    border-bottom: 8px solid var(--borderCellsAndBackground);
+}
+
+.item:nth-child(7),
+.item:nth-child(8) {
+    border-right: 8px solid var(--borderCellsAndBackground);
+}
+
+.item:nth-child(3),
+.item:nth-child(6) {
+    border-bottom: 8px solid var(--borderCellsAndBackground);
+}
+
+.boardGame {
+    display: grid;
+    grid-template-columns: repeat(3, 0fr);
+}
+
+.styleCell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 60px;
+    color: var(--white);
+    margin-top: 20px;
+}
+
+
+/* .buttton {
+    border: none;
+    padding: 12px 28px;
+    margin-top: 28px;
+    border-radius: 8px;
+    font-size: 28px;
+    background-color: var(--borderCellsAndBackground);
+    color: var(--white);
+    box-shadow: rgb(241, 241, 243) 0px 7px 29px 0px;
+    cursor: pointer;
+} */
+
+.game {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+
+/* WINNER CONTAINER */
+
+.winnerContainer {
+    display: none;
+}
+
+.winner {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--item);
+}
+
+.winner .title {
+    color: var(--borderCellsAndBackground);
+}
+
+.winner .message {
+    font-size: 40px;
+    color: var(--green);
+}
+
+.winner .messageWon {
+    text-align: center;
+}

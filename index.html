@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X si O</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="formGame">
+        <form action="#">
+            <h1 class="title">Enter Your Names</h1>
+            <div class="namePlayers">
+                <label for="playerX">Name Player X:</label>
+                <input class="nameX" type="text">
+                <label for="playerO">Name Player O:</label>
+                <input class="nameO" type="text">
+            </div>
+            <div class="errorMessage"></div>
+            <button id="startGame" class="startGame button">Start Game</button>
+        </form>
+    </div>
+
+    <div class="game">
+        <h1 class="title">TIC TAC TOE</h1>
+        <div class="players">
+            <div class="player">Name player X: <span class="playerX"></span><br>
+                <p>Score: <span class="scoreX">0</span></p>
+            </div>
+            <div class="player">Name player O: <span class="playerO"></span><br>
+                <p>Score: <span class="scoreO">0</span></p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="boardGame">
+            </div>
+            <button id="resetBtn" class="button">Reset Game</button>
+        </div>
+    </div>
+
+    <div class="winnerContainer">
+        <div class="message"></div>
+        <button class="restartGame button">Restart game</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

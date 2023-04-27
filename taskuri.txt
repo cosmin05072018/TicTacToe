@@ -1,0 +1,11 @@
+-facem formular in care cei doi jucatori vor trece numele respective in partea lui X si O, iar la submit vom salva datele in localStorage de forma: jucatorX=[{nume:.., scor: initial 0}] si jucatorO=[{nume:.., scor: initial 0}];
+
+-formularul va fi setat la display:none
+
+-continer-ul care tine jocul va primi display:block pentru a putea fi afisat 
+
+-cand jocul va fi termnat, va fi afisat un mesaj de felicitare pentru castigator
+
+
+
+AM RAMAS LA INCREMENTAREA SCORURILOR
