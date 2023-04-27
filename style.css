@@ -227,7 +227,11 @@ body {
     .game .title {
         font-size: 25px;
     }
-    .game .players {
+    .game .players,
+    .game .players .playerX,
+    .game .players .scoreX,
+    .game .players .playerO,
+    .game .players .scoreO {
         font-size: 14px;
     }
 }
