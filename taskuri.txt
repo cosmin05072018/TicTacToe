@@ -9,3 +9,22 @@
 
 
 AM RAMAS LA INCREMENTAREA SCORURILOR
+
+
+
+
+[09:38, 22.03.2023] Cristian: 320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV
+
+
+320px
+480px
+600px
+768px
+900px
+1024px
+1200px
+Cand folosesti min-width: 768px, 768 nu este inclus..incepe de la 769
