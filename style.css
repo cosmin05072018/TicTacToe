@@ -219,10 +219,12 @@ body {
 @media only screen and (max-width: 480px) and (min-width: 320px) {
     .formGame .title {
         font-size: 25px;
-        color: red;
     }
     .formGame form .namePlayers {
         display: flex;
         flex-direction: column;
+    }
+    .game .title {
+        font-size: 18px;
     }
 }
