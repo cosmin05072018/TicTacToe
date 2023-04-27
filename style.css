@@ -239,4 +239,13 @@ body {
         width: 80px;
         height: 80px;
     }
+    .winner .title {
+        font-size: 30px;
+    }
+    .winnerContainer .message {
+        font-size: 20px;
+    }
+    .winnerContainer .button {
+        font-size: 20px;
+    }
 }
