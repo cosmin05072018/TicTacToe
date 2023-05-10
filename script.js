@@ -1,6 +1,6 @@
 let boardGame = document.querySelector(".boardGame");
 let resetBtn = document.getElementById("resetBtn"); //resetare din timpul jocurlui
-let restartGame = document.querySelector(".restartGame"); //restart joc dupa aflarea rezultatlui
+let restartGame = document.querySelector(".restartGame"); //restart joc dupa aflarea rezultatului
 let winnerContainer = document.querySelector(".winnerContainer");
 let game = document.querySelector(".game");
 let playerX = document.querySelector(".nameX");
@@ -29,11 +29,11 @@ let cells = document.querySelectorAll(".item");
 cells.forEach((cell) => {
     cell.addEventListener("click", (e) => {
         let r = Number(cell.getAttribute("r"));
-        let j = Number(cell.getAttribute("c"));
+        let c = Number(cell.getAttribute("c"));
         cell.classList.add("styleCell");
         if (!cell.innerHTML) {
             cell.innerHTML = player;
-            board[r][j] = player;
+            board[r][c] = player;
             winner();
             if (player === "X") {
                 player = "O";
@@ -43,25 +43,14 @@ cells.forEach((cell) => {
         }
         resetBtn.addEventListener("click", () => {
             cell.innerHTML = "";
-            board = [
-                [null, null, null],
-                [null, null, null],
-                [null, null, null],
-            ];
-            player = "X";
+            resetGame()
         });
         restartGame.addEventListener("click", () => {
             winnerContainer.classList.remove("winner");
             game.classList.add("visible");
             cell.innerHTML = "";
-            board = [
-                [null, null, null],
-                [null, null, null],
-                [null, null, null],
-            ];
-            player = "X";
+            resetGame()
         });
-        console.log(board);
     });
 });
 
@@ -150,4 +139,14 @@ function draw() {
     game.classList.remove("visible");
     let messageWinner = document.querySelector(".message");
     messageWinner.innerHTML = "The match ended in a draw.";
+}
+
+
+function resetGame() {
+    board = [
+        [null, null, null],
+        [null, null, null],
+        [null, null, null],
+    ];
+    player = "X";
 }
