@@ -1,0 +1,4 @@
+Interfata:
+                --- singlePlayer or multiPlayer
+                    --- singlePlayer: "Enter your name"
+                    --- multiPlayer: AVEM DEJA INTERFATA
