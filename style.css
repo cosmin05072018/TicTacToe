@@ -219,7 +219,6 @@ body {
 }
 .currentPlayer{
   padding: 2px 12px;
-  color: var(--item);
   background-color: var(--green);
   color: var(--white) !important;
   font-weight: bolder;
