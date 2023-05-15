@@ -221,6 +221,7 @@ body {
   padding: 2px 12px;
   color: var(--item);
   background-color: var(--green);
+  color: var(--white) !important;
   font-weight: bolder;
   font-size: 28px;
   letter-spacing: 4px;
