@@ -106,7 +106,7 @@ async function computerMove() {
       playerX.classList.add('currentPlayer');
       currentPlayer = gamer;
       if (cell != null) {
-        await wait(100); // Așteaptă 1 secundă
+        await wait(300); // Așteaptă 1 secundă
         computerTour();
       }
     }
