@@ -26,9 +26,16 @@ body {
 }
 
 .formGame .links a {
-  color: var(--borderCellsAndBackground);
+  /* color: var(--borderCellsAndBackground); */
   text-decoration: none;
   font-size: 35px;
+  /* background-color: var(--green); */
+}
+
+.formGame .links a h1{
+  background-color: var(--green);
+  padding: 12px 18px;
+  border-radius: 12px;
 }
 
 .formGame .links a:hover h1 {
@@ -97,11 +104,6 @@ body {
   display: flex;
   justify-content: space-around;
   font-size: 30px;
-}
-
-.players .player span {
-  font-size: 28px;
-  color: var(--borderCellsAndBackground);
 }
 
 .displayErr {
@@ -219,12 +221,13 @@ body {
 }
 .currentPlayer{
   padding: 2px 12px;
-  background-color: var(--green);
-  color: var(--white) !important;
+  background-color: var(--white);
+  color: var(--green);
   font-weight: bolder;
   font-size: 28px;
   letter-spacing: 4px;
   border-radius: 6px;
+  transition: 1s ease;
 }
 /* MEDIA QUERY */
 

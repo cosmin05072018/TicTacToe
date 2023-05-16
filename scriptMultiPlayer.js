@@ -13,6 +13,9 @@ const errorMessage = document.querySelector(".errorMessage");
 const playerX = document.querySelector(".nameX");
 const playerO = document.querySelector(".nameO");
 
+let firstPlayer = document.querySelector(".playerX");
+let secondPlayer = document.querySelector(".playerO");
+firstPlayer.classList.add('currentPlayer');
 let player = "X";
 let scorePlayerX = 0;
 let scorePlayerO = 0;
@@ -49,10 +52,12 @@ function isBoardEmpty() {
 
 function winner() {
   if (checkCells("X")) {
+    player = "X";
     setWinner(playerX.value);
     scorePlayerX++;
     scoreX.innerHTML = scorePlayerX;
   } else if (checkCells("O")) {
+    player = "O";
     setWinner(playerO.value);
     scorePlayerO++;
     scoreO.innerHTML = scorePlayerO;
@@ -66,7 +71,7 @@ function setName(name, selector) {
   spanX.innerHTML = `${name}`;
 }
 
-function setWinner(player) {
+function setWinner(player) { 
   winnerContainer.classList.add("winner");
   game.classList.remove("visible");
   messageWinner.innerHTML = `<h1 class="title">Congratulations!</h1>
@@ -84,6 +89,7 @@ function resetGame() {
     cell.innerHTML = "";
   });
 
+
   board = [
     [null, null, null],
     [null, null, null],
@@ -100,7 +106,15 @@ cells.forEach((cell) => {
       cell.innerHTML = player;
       board[r][c] = player;
       winner();
-      player = player === "X" ? "O" : "X";
+      if(player === "X"){
+        firstPlayer.classList.remove('currentPlayer');
+        secondPlayer.classList.add('currentPlayer');
+        player = "O";
+      }else{
+        firstPlayer.classList.add('currentPlayer');
+        secondPlayer.classList.remove('currentPlayer');
+        player = "X";
+      }
     }
   });
 });
@@ -109,6 +123,9 @@ resetBtn.addEventListener("click", () => {
   resetGame();
 });
 restartGame.addEventListener("click", () => {
+  
+  secondPlayer.classList.remove('currentPlayer');
+  firstPlayer.classList.add('currentPlayer');
   winnerContainer.classList.remove("winner");
   game.classList.add("visible");
   resetGame();
