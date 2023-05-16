@@ -26,10 +26,10 @@ body {
 }
 
 .formGame .links a {
-  /* color: var(--borderCellsAndBackground); */
+  color: var(--borderCellsAndBackground);
   text-decoration: none;
   font-size: 35px;
-  /* background-color: var(--green); */
+  background-color: var(--green);
 }
 
 .formGame .links a h1{
