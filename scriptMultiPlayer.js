@@ -120,6 +120,9 @@ cells.forEach((cell) => {
 
 resetBtn.addEventListener("click", () => {
   resetGame();
+  player = "X";
+  secondPlayer.classList.remove("currentPlayer");
+  firstPlayer.classList.add("currentPlayer");
 });
 
 restartGame.addEventListener("click", () => {
