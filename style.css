@@ -280,3 +280,11 @@ body {
     font-size: 20px;
   }
 }
+
+/* in progress */
+
+.inProgress{
+  background-color: gray!important;
+  border-radius: 6px;
+  text-align: center;
+}
