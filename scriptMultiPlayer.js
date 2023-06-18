@@ -15,8 +15,8 @@ const playerO = document.querySelector(".nameO");
 
 let firstPlayer = document.querySelector(".playerX");
 let secondPlayer = document.querySelector(".playerO");
-firstPlayer.classList.add('currentPlayer');
-let player = "X";
+firstPlayer.classList.add("currentPlayer");
+let player;
 let scorePlayerX = 0;
 let scorePlayerO = 0;
 
@@ -71,7 +71,7 @@ function setName(name, selector) {
   spanX.innerHTML = `${name}`;
 }
 
-function setWinner(player) { 
+function setWinner(player) {
   winnerContainer.classList.add("winner");
   game.classList.remove("visible");
   messageWinner.innerHTML = `<h1 class="title">Congratulations!</h1>
@@ -89,16 +89,15 @@ function resetGame() {
     cell.innerHTML = "";
   });
 
-
   board = [
     [null, null, null],
     [null, null, null],
     [null, null, null],
   ];
-  player = "X";
 }
 
 cells.forEach((cell) => {
+  player = "X";
   cell.addEventListener("click", (e) => {
     let r = Number(cell.getAttribute("r"));
     let c = Number(cell.getAttribute("c"));
@@ -106,13 +105,13 @@ cells.forEach((cell) => {
       cell.innerHTML = player;
       board[r][c] = player;
       winner();
-      if(player === "X"){
-        firstPlayer.classList.remove('currentPlayer');
-        secondPlayer.classList.add('currentPlayer');
+      if (player === "X") {
+        firstPlayer.classList.remove("currentPlayer");
+        secondPlayer.classList.add("currentPlayer");
         player = "O";
-      }else{
-        firstPlayer.classList.add('currentPlayer');
-        secondPlayer.classList.remove('currentPlayer');
+      } else {
+        firstPlayer.classList.add("currentPlayer");
+        secondPlayer.classList.remove("currentPlayer");
         player = "X";
       }
     }
@@ -122,13 +121,26 @@ cells.forEach((cell) => {
 resetBtn.addEventListener("click", () => {
   resetGame();
 });
+
 restartGame.addEventListener("click", () => {
-  
-  secondPlayer.classList.remove('currentPlayer');
-  firstPlayer.classList.add('currentPlayer');
+  if (checkCells("X")) {
+    player = "X";
+    secondPlayer.classList.remove("currentPlayer");
+    firstPlayer.classList.add("currentPlayer");
+  } else if (checkCells("O")) {
+    player = "O";
+    console.log(player);
+    firstPlayer.classList.remove("currentPlayer");
+    secondPlayer.classList.add("currentPlayer");
+  } else if (isBoardEmpty()) {
+    player = "X";
+    secondPlayer.classList.remove("currentPlayer");
+    firstPlayer.classList.add("currentPlayer");
+  }
   winnerContainer.classList.remove("winner");
   game.classList.add("visible");
   resetGame();
+  console.log(player);
 });
 
 startBtn.addEventListener("click", (e) => {
